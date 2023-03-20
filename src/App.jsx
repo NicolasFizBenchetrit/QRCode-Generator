@@ -19,7 +19,7 @@ function App () {
     }
     QRCode.toDataURL(urlText, opts, (err, url) => {
       if (err) {
-        toast.error('El texto esta varcío')
+        toast.error('Url is empty')
       }
       setQrcode(url)
       setGenerated(true)
