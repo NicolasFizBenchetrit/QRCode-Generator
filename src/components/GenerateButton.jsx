@@ -17,7 +17,7 @@ const GeneratingButton = () => (
   </button>
 )
 
-const GenerateButton = (generated) => {
+const GenerateButton = ({ generated }) => {
   return generated ? <GenerateStartButton /> : <GeneratingButton />
 }
 
