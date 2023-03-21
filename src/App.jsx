@@ -2,7 +2,7 @@ import './App.css'
 import Input from './components/Input'
 import Qr from './components/Qr'
 import { Toaster } from 'react-hot-toast'
-import useQRCoder from './hooks/useQRcoder'
+import useQRCoder from './hooks/useQRCoder'
 
 function App () {
   const { qrcode, generateQRCode } = useQRCoder()
