@@ -1,15 +1,9 @@
-import { useState } from 'react'
 import GenerateButton from './GenerateButton'
-import useGenerated from '../hooks/useGenerated'
 
-const Input = ({ generator, qrCode }) => {
-  const [url, setUrl] = useState('')
-  const { generated, setGenerated } = useGenerated(qrCode)
-
+const Input = ({ generator, loading, url, setUrl }) => {
   const buttonGenerate = (e) => {
     e.preventDefault()
-    setGenerated(false)
-    generator(url)
+    generator({ urlText: url })
   }
 
   return (
@@ -24,7 +18,7 @@ const Input = ({ generator, qrCode }) => {
           onChange={e => setUrl(e.target.value)}
         />
       </div>
-      <GenerateButton generated={generated} />
+      <GenerateButton loading={loading} />
     </form>
   )
 }
