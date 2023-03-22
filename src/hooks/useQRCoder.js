@@ -8,6 +8,10 @@ function useQRCoder ({ url }) {
   const previousUrl = useRef(url)
 
   const generateQRCode = useCallback(async ({ urlText }) => {
+    if (!urlText) {
+      toast.error('Url is empty')
+      return
+    }
     if (urlText === previousUrl.current) return
     setLoading(true)
     previousUrl.current = urlText
